@@ -57,6 +57,7 @@ def root_mean_squared_error(y_true, y_pred):
 
 model = Sequential()
 model.add(Dense(units=16,input_dim=x_train.shape[1], kernel_initializer='random_normal',activation='relu'))
+# Model 1
 # model.add(Dense(units=10, kernel_initializer='random_normal',activation='relu'))
 # model.add(Dense(units=200, kernel_initializer='random_normal',activation='relu'))
 # model.add((Dropout(0.3)))
@@ -79,6 +80,7 @@ model.add(Dense(units=16,input_dim=x_train.shape[1], kernel_initializer='random_
 # model.add((Dropout(0.3)))
 # model.add(Dense(units=50, kernel_initializer='random_normal',activation='relu'))
 #==============================================================================
+# Model 2
 model.add(Dense(units=128, kernel_initializer='random_normal',activation='relu'))
 model.add(Dense(units=128, kernel_initializer='random_normal',activation='relu'))
 model.add(Dense(units=128, kernel_initializer='random_normal',activation='relu'))
@@ -107,7 +109,7 @@ model.compile(loss='MAE',optimizer='Adam')
 
 checkpoint = ModelCheckpoint('weight/ep{epoch:03d}-loss{loss:03f}-val_loss{val_loss:.3f}.h5', monitor='val_loss',verbose=1, save_best_only=True)
 
-train_history = model.fit(x=X_train,y=y_train,validation_data=(X_valid,y_valid),epochs=1000,batch_size=5000,callbacks=[checkpoint])
+train_history = model.fit(x=X_train,y=y_train,validation_data=(X_valid,y_valid),epochs=2000,batch_size=5000,callbacks=[checkpoint])
 
 Y_predict = model.predict(X_test)
 
