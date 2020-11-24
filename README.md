@@ -13,6 +13,7 @@
 ##	二、程式流程圖與寫法
 ![機器學習模型訓練流程圖](https://github.com/t109318121/ML_HouseRegression/blob/main/FlowChart.jpg)
 ##	三、訓練與驗證損失
+### 使用Model 1
 超參數設計：設計Learning Rate = 0.001 , Epochs = 200 , 並分別測試Batch_Size 為 64與256。
 ### ➤Batch_Size = 64
 ![Batch_Size = 64](https://github.com/t109318121/ML_HouseRegression/blob/main/loss_64.png)
@@ -20,6 +21,11 @@
 ![Batch_Size = 256](https://github.com/t109318121/ML_HouseRegression/blob/main/loss_256.png)
 
 由上面兩張圖得知，經由所設計的模型訓練後，Train Loss從原本的450000降至80000左右，Validation Loss從原本的180000降至60000～70000左右。觀察Loss曲線，在Batch_Size較大時，Validation Loss下降較為平緩，震盪情況比較不明顯。
+### 使用Model 2
+超參數設計：設計Learning Rate = 0.001 , Epochs = 1000 , Batch_Size = 5000。
+![Batch_Size = 5000](https://github.com/MachineLearningNTUT/regression-t109318121/blob/main/M2_loss_5000.png)
+
+由上圖得知，經由所設計的模型訓練後，Train Loss與Validation Loss從原本約500000降至70000左右，此時已無震盪情況發生。
 
 ##   四、Loss分析與改進
 在資料預處理的過程可能沒有注意到空值，缺失值，異常值，或者可能需移除較不重要的欄位。
