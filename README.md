@@ -16,9 +16,9 @@
 ### 使用Model 1
 超參數設計：設計Learning Rate = 0.001 , Epochs = 200 , 並分別測試Batch_Size 為 64與256。
 ### ➤Batch_Size = 64
-![Batch_Size = 64](https://github.com/t109318121/ML_HouseRegression/blob/main/loss_64.png)
+![Batch_Size = 64](https://github.com/t109318121/ML_HouseRegression/blob/main/M1_loss_64.png)
 ### ➤Batch_Size = 256
-![Batch_Size = 256](https://github.com/t109318121/ML_HouseRegression/blob/main/loss_256.png)
+![Batch_Size = 256](https://github.com/t109318121/ML_HouseRegression/blob/main/M1_loss_256.png)
 
 由上面兩張圖得知，經由所設計的模型訓練後，Train Loss從原本的450000降至80000左右，Validation Loss從原本的180000降至60000～70000左右。觀察Loss曲線，在Batch_Size較大時，Validation Loss下降較為平緩，震盪情況比較不明顯。
 ### 使用Model 2
