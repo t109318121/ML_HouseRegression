@@ -14,7 +14,7 @@ from keras import optimizers
 from keras.layers import Dense,Dropout
 from sklearn import preprocessing
 from keras import backend as K
-from keras.callbacks import ModelCheckpoint
+from keras.callbacks import ModelCheckpoint,EarlyStopping
 
 np.random.seed(10)
 
@@ -107,9 +107,10 @@ print(model.summary())
 model.compile(loss='MAE',optimizer='Adam')
 
 
-checkpoint = ModelCheckpoint('weight/ep{epoch:03d}-loss{loss:03f}-val_loss{val_loss:.3f}.h5', monitor='val_loss',verbose=1, save_best_only=True)
+Checkpoint = ModelCheckpoint('weight/ep{epoch:03d}-loss{loss:03f}-val_loss{val_loss:.3f}.h5', monitor='val_loss',verbose=1, save_best_only=True)
+Stopping = EarlyStopping(monitor='val_loss', min_delta=0, patience=20, verbose=0, mode='auto', baseline=None)
 
-train_history = model.fit(x=X_train,y=y_train,validation_data=(X_valid,y_valid),epochs=2000,batch_size=5000,callbacks=[checkpoint])
+train_history = model.fit(x=X_train,y=y_train,validation_data=(X_valid,y_valid),epochs=2000,batch_size=5000,callbacks=[Checkpoint , Stopping])
 
 Y_predict = model.predict(X_test)
 
