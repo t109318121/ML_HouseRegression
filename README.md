@@ -68,9 +68,9 @@ ResNet在2015年被提出，在ImageNet比賽classification任務上獲得第一
 ####    4.對解凍的卷積層與全連線層進行訓練，得到新的權重
 ##	訓練驗證損失
 ####    ResNet101
-
 ResNet101超參數設計：設計learning_rate = 0.0001，EPOCH = 100，batch_size = 180，val_batch_size = 100，step_size=5。
 訓練中使用學習率下降，以利找到局部最小值，在訓練的過程中，可以看到使用已訓練好的模型進行訓練，其loss很快就下降到0.5，再逐步收斂至趨近於0。
+
 ![ResNet101訓練與驗證loss圖](https://github.com/t109318121/ML_HouseRegression/blob/main/image/res101_frezee.png)
 -----
 
