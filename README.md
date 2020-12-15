@@ -53,6 +53,7 @@ classification-t109318121 created by GitHub Classroom
 ##	模型訓練流程圖
 ![深度學習模型訓練流程圖](https://github.com/MachineLearningNTUT/classification-t109318121/blob/master/FlowChart.jpg)
 訓練模型使用自己所設計之cnn、ResNet101與ResNet151模型，所設計之cnn使用兩層convolution與兩層Maxpooling，並以ReLU為激勵函數，在下loss圖與混淆矩陣中可發現使用自己所設計之cnn在分類效果上不是很理想，故使用ResNet模型進行分類。
+
 ![cnn訓練與驗證loss圖](https://github.com/t109318121/ML_HouseRegression/blob/main/image/cnn__StepLR_5_cnn.jpg)
 ![cnn測試之混淆矩陣](https://github.com/MachineLearningNTUT/classification-t109318121/blob/master/image/cnn_StepLR_5.png)
 ResNet在2015年被提出，在ImageNet比賽classification任務上獲得第一名，因此選擇ResNet101與ResNet151作為此研究的網路模型，在影像分類中，卷積神經網路最前面幾層用於辨識影像最基本的特徵，像是物體的紋理、輪廓、顏色等等，較後面的階層才是提取影像重要特徵的關鍵，因此保留CNN底層權重，僅針對後面階層與新的分類器進行訓練即可，一來可套用最好的權重進行學習，二來可以節省訓練時間。基於上述原因採用遷移學習呢，把已經訓練好的模型和權重直接納入到新的資料集當中進行訓練，只改變之前模型的分類器（全連線層和softmax），將分類輸出成20類，透過逐步解凍的技術，解凍'layer4.0.conv1.weight'後的階層，使模型訓練的效果達到最好。
@@ -71,7 +72,7 @@ ResNet151超參數設計：設計learning_rate = 0.0001，EPOCH = 10，batch_siz
 比較ResNet151訓練過程中未遷移學習，但兩者在學習成效上準確率皆非常好，但所需時間卻大大拉長，故僅以10epoch進行測試。
 ![ResNet151訓練與驗證loss圖](https://github.com/t109318121/ML_HouseRegression/blob/main/image/res151_unfrezee_StepLR_5.jpg)
 ##   Loss分析改進
-####    在資料預處理的過程中，比較"先將資料集進行擴增再進行分割"與"先將資料集進行分割再進行擴增"可能會有不同效果，此次專案是採用先將資料集擴增再分割，再預處理的過程中可能也會有過度擬合的問題發生。再訓練上，或許參數還可以調整更好，以提升訓練成效。
+在資料預處理的過程中，比較"先將資料集進行擴增再進行分割"與"先將資料集進行分割再進行擴增"可能會有不同效果，此次專案是採用先將資料集擴增再分割，再預處理的過程中可能也會有過度擬合的問題發生。再訓練上，或許參數還可以調整更好，以提升訓練成效。
 ##  結果
 ResNet101
 以每類375張圖像，共7500張圖像計行測試，其ResNet101測試結果以混淆矩陣呈現如下，其測試準確率達99.27%。
