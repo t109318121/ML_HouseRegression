@@ -40,13 +40,10 @@
 ##   Loss分析與改進
 ####    ➤資料本身的特徵中可能夾雜一些較不重要的資訊，透過在資料預處理的過程挑選比較具有指標性的特徵並移除較不重要的欄位。空值，缺失值，異常值也須更仔細檢查，在預處理過程中減少loss降不下去的潛在因素。訓練中，在梯度下降的優化中，當學習率太高時會導致loss值不收斂，太低則下降緩慢，對於超參數的調整也是尤其重要。如果出現過擬合的現象可能是特徵數太少，丟棄太多資訊，須調整篩選特徵，也可以適時在神經網絡使用dropout，於神經網路中隨機丟棄部分神經元。在訓練時，dropout可可使得每次只有部分網路結構得到更新，高效的將神經網絡模型平均化。
 
-1. ##### dataset_partition @[Chen-Yen Chang BlackyYen](https://github.com/BlackyYen)
-
-
-
 # classification-t109318121
 classification-t109318121 created by GitHub Classroom
 ##   目錄
+1. ##### 友情贊助dataset_partition @[Chen-Yen Chang BlackyYen](https://github.com/BlackyYen)
 1.  [一做法說明](#做法說明)
 2.  [二深度學習模型訓練流程圖](#深度學習模型訓練流程圖)
 3.  [三訓練與驗證損](#訓練與驗證損失)
