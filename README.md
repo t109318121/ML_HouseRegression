@@ -84,10 +84,10 @@ ResNet151超參數設計：設計learning_rate = 0.0001，EPOCH = 10，batch_siz
 ####    在資料預處理的過程中，比較"先將資料集進行擴增再進行分割"與"先將資料集進行分割再進行擴增"可能會有不同效果，此次專案是採用先將資料集擴增再分割，再預處理的過程中可能也會有過度擬合的問題發生。再訓練上，或許參數還可以調整更好，以提升訓練成效。
 
 ##  結果
-####    ResNet101
+###    ResNet101
 以每類375張圖像，共7500張圖像計行測試，其ResNet101測試結果以混淆矩陣呈現如下，其測試準確率達99.27%。
 ![ResNet101測試之混淆矩陣](https://github.com/t109318121/ML_HouseRegression/blob/main/image/res101_frezee_cm.png)
-####    ResNet151
+###    ResNet151
 以每類375張圖像，共7500張圖像計行測試，其ResNet151測試結果以混淆矩陣呈現如下，其測試準確率達99.66%。
 ![ResNet151測試之混淆矩陣](https://github.com/t109318121/ML_HouseRegression/blob/main/image/res151_unfrezee_StepLR_5.png)
 
