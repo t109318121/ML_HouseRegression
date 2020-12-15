@@ -62,7 +62,7 @@ classification-t109318121 created by GitHub Classroom
 -----
 訓練模型使用自己所設計之cnn、ResNet101與ResNet151模型，所設計之cnn使用兩層convolution與兩層Maxpooling，並以ReLU為激勵函數，在下loss圖與混淆矩陣中可發現使用自己所設計之cnn在分類效果上不是很理想，故使用ResNet模型進行分類。
 
-![cnn訓練與驗證loss圖](https://github.com/MachineLearningNTUT/classification-t109318121/blob/master/image/cnn__StepLR_5_cnn.jpg)
+![cnn訓練與驗證loss圖](https://github.com/t109318121/ML_HouseRegression/blob/main/image/cnn__StepLR_5_cnn.jpg)
 -----
 ![cnn測試之混淆矩陣](https://github.com/MachineLearningNTUT/classification-t109318121/blob/master/image/cnn_StepLR_5.png)
 -----
@@ -76,14 +76,14 @@ ResNet在2015年被提出，在ImageNet比賽classification任務上獲得第一
 ####    ResNet101
 ResNet101超參數設計：設計learning_rate = 0.0001，EPOCH = 100，batch_size = 180，val_batch_size = 100，step_size=5。
 訓練中使用學習率下降，以利找到局部最小值，在訓練的過程中，可以看到使用已訓練好的模型進行訓練，其loss很快就下降到0.5，再逐步收斂至趨近於0。
-![ResNet101訓練與驗證loss圖](https://github.com/MachineLearningNTUT/classification-t109318121/blob/master/image/res101_frezee.png)
+![ResNet101訓練與驗證loss圖](https://github.com/t109318121/ML_HouseRegression/blob/main/image/res101_frezee.png)
 -----
 
 ####    ResNet151
 ResNet151超參數設計：設計learning_rate = 0.0001，EPOCH = 10，batch_size = 180，val_batch_size = 100，step_size=5。
 比較ResNet151訓練過程中未遷移學習，但兩者在學習成效上準確率皆非常好，但所需時間卻大大拉長，故僅以10epoch進行測試。
 
-![ResNet151訓練與驗證loss圖](https://github.com/MachineLearningNTUT/classification-t109318121/blob/master/image/res151_unfrezee_StepLR_5.jpg)
+![ResNet151訓練與驗證loss圖](https://github.com/t109318121/ML_HouseRegression/blob/main/image/res151_unfrezee_StepLR_5.jpg)
 -----
 ##   四Loss分析與改進
 ####    在資料預處理的過程中，比較"先將資料集進行擴增再進行分割"與"先將資料集進行分割再進行擴增"可能會有不同效果，此次專案是採用先將資料集擴增再分割，再預處理的過程中可能也會有過度擬合的問題發生。再訓練上，或許參數還可以調整更好，以提升訓練成效。
@@ -91,8 +91,8 @@ ResNet151超參數設計：設計learning_rate = 0.0001，EPOCH = 10，batch_siz
 ##  五測試結果
 ####    ResNet101
 以每類375張圖像，共7500張圖像計行測試，其ResNet101測試結果以混淆矩陣呈現如下，其測試準確率達99.27%。
-![ResNet101測試之混淆矩陣](https://github.com/MachineLearningNTUT/classification-t109318121/blob/master/image/res101_frezee_cm.png)
+![ResNet101測試之混淆矩陣](https://github.com/t109318121/ML_HouseRegression/blob/main/image/res101_frezee_cm.png)
 ####    ResNet151
 以每類375張圖像，共7500張圖像計行測試，其ResNet151測試結果以混淆矩陣呈現如下，其測試準確率達99.66%。
-![ResNet151測試之混淆矩陣](https://github.com/MachineLearningNTUT/classification-t109318121/blob/master/image/res151_unfrezee_StepLR_5.png)
+![ResNet151測試之混淆矩陣](https://github.com/t109318121/ML_HouseRegression/blob/main/image/res151_unfrezee_StepLR_5.png)
 
