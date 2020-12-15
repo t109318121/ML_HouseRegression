@@ -67,6 +67,7 @@ ResNet在2015年被提出，在ImageNet比賽classification任務上獲得第一
 ####    3.解凍部分頂部的卷積層，保留底部卷積神經網路的權重
 ####    4.對解凍的卷積層與全連線層進行訓練，得到新的權重
 ##	訓練驗證損失
+-----
 ####    ResNet101
 -----
 ResNet101超參數設計：設計learning_rate = 0.0001，EPOCH = 100，batch_size = 180，val_batch_size = 100，step_size=5。
