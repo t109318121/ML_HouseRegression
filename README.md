@@ -46,9 +46,6 @@
 
 # classification-t109318121
 classification-t109318121 created by GitHub Classroom
-
-#   Machine Learning@NTUT – Classification  t109318121
-
 ##   目錄
 1.  [一做法說明](#做法說明)
 2.  [二深度學習模型訓練流程圖](#深度學習模型訓練流程圖)
